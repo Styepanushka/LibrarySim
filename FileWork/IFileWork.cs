@@ -1,4 +1,4 @@
-﻿namespace FileWork;
+﻿namespace LibrarySim.FileWork;
 
 interface IFileWork
 {

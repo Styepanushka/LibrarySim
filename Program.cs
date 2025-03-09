@@ -1,11 +1,14 @@
-﻿using LibrarySim.Book;
-using LibrarySim.Controller;
+﻿using LibrarySim.Controller;
+using LibrarySim.FileWork;
 
 class Programm
 {
     public static void Main()
     {
-        new Book(1);
+        Loading.CashAllBooks();
+        Loading.CashAllUsers();
+
+        Console.WriteLine(Directory.GetCurrentDirectory());
         Controller controller = new Controller();
         while (true)
         {

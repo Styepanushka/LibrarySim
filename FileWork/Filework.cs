@@ -1,4 +1,4 @@
-﻿namespace FileWork;
+﻿namespace LibrarySim.FileWork;
 internal class FileWork : IFileWork
 {
     private string _allData;
