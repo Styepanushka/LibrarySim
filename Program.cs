@@ -5,9 +5,9 @@ class Programm
 {
     public static void Main()
     {
-        Loading.CashAllBooks();
-        Loading.CashAllUsers();
-
+        Loading load = new Loading();
+        load.CashAllBooks();
+        load.CashAllUsers();
         Console.WriteLine(Directory.GetCurrentDirectory());
         Controller controller = new Controller();
         while (true)

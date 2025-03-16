@@ -1,5 +1,7 @@
 ﻿namespace LibrarySim.UserBook;
 
+using LibrarySim.Book;
+using LibrarySim.User;
 internal class UserBook : IUserBook
 {
     private static List<UserBook> _allUserBook;
@@ -25,28 +27,28 @@ internal class UserBook : IUserBook
         _userId = userId;
         _allUserBook.Add(this);
     }
-    public Book.Book GetBook()
+    public Book GetBook()
     {
-        return (Book.Book)Book.Book.GetBook(_bookId);
+        return Book.GetBook(_bookId);
     }
 
-    public User.User GetUser()
+    public User GetUser()
     {
-        return (User.User)User.User.GetUser(_userId);
+        return User.GetUser(_userId);
     }
 
     public void Read()
     {
         Console.WriteLine(
-            User.User.GetUser(_userId).GetUsername()
+            User.GetUser(_userId).GetUsername()
             +
             " is reading "
             +
-            Book.Book.GetBook(_bookId).GetTitle()
+            Book.GetBook(_bookId).GetTitle()
             +
             " written by "
             +
-            Book.Book.GetBook(_bookId).GetAuthor()
+            Book.GetBook(_bookId).GetAuthor()
             );
     }
 }

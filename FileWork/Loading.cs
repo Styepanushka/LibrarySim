@@ -3,18 +3,18 @@
 using LibrarySim.Book;
 using LibrarySim.User;
 
-internal static class Loading
+internal class Loading
 {
-    private static FileWork _bookFile;
-    private static FileWork _userFile;
+    private FileWork _bookFile;
+    private FileWork _userFile;
 
-    static Loading()
+    public Loading()
     {
         _bookFile = new FileWork(@"Res\book.txt");
         _userFile = new FileWork(@"Res\users.txt");
     }
 
-    public static Book LoadBook(int id)
+    public Book LoadBook(int id)
     {
         string raw = _bookFile.ReadLine(id);
         string[] data = raw.Split('\t');
@@ -22,7 +22,7 @@ internal static class Loading
         return new Book(data[0], data[1]);
     }
 
-    public static void CashAllBooks()
+    public void CashAllBooks()
     {
         int c = 0;
         while (true)
@@ -38,12 +38,12 @@ internal static class Loading
         }
     }
 
-    public static User LoadUser(int id)
+    public User LoadUser(int id)
     {
         return new User(_userFile.ReadLine(id));
     }
 
-    public static void CashAllUsers()
+    public void CashAllUsers()
     {
         int c = 0;
         while (true)
